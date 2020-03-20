@@ -1,15 +1,14 @@
 package ru.demo.exercise.controller;
 
-import jdk.internal.jline.internal.Log;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
+import org.springframework.stereotype.Controller;
 import ru.demo.exercise.models.Meal;
 import ru.demo.exercise.service.MealService;
 
-import java.util.List;
-
+@Controller
 public abstract class AbstractMealController {
     private final Logger LOG = LoggerFactory.getLogger(getClass());
 

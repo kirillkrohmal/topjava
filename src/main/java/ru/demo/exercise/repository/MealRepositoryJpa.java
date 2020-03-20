@@ -13,11 +13,6 @@ public interface MealRepositoryJpa extends JpaRepository<Meal, Integer> {
 
     Meal getById(int id);
 
-
-    @Override
-    <S extends Meal> List<S> save(Iterable<S> entities);
-
-
     @Override
     void deleteAll();
 }

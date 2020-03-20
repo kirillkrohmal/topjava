@@ -31,7 +31,9 @@ public class JspMealController extends AbstractMealController {
     }
 
     @PostMapping(value = "/create")
-    public String save(Meal meal) {
+    public String save(@ModelAttribute Meal meal) {
+        meal.setId(0);
+
         super.add(meal);
         return "redirect:/list";
     }
@@ -42,7 +44,7 @@ public class JspMealController extends AbstractMealController {
         return "redirect:/list";
     }
 
-    @GetMapping(value = "/updateForm")
+    @PutMapping(value = "/updateForm")
     public String updateForm(@RequestParam("mealId") int id, Model model) {
         Meal meal = mealService.get(id);
         model.addAttribute("mealsCreate", meal);
