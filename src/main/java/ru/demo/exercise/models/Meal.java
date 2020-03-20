@@ -1,27 +1,32 @@
 package ru.demo.exercise.models;
 
-import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.time.LocalDateTime;
 
-public class Meals {
-    private Date dateTime;
+
+
+@Entity
+public class Meal extends AbstractBaseEntity {
+    private LocalDateTime dateTime;
     private String description;
     private int calories;
 
-
-    public Meals() {
+    public Meal() {
     }
 
-    public Meals(Date dateTime, String description, int calories) {
+    public Meal(Integer id, LocalDateTime dateTime, String description, int calories) {
+        super(id);
         this.dateTime = dateTime;
         this.description = description;
         this.calories = calories;
     }
 
-    public Date getDateTime() {
+    public LocalDateTime getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(Date dateTime) {
+    public void setDateTime(LocalDateTime dateTime) {
         this.dateTime = dateTime;
     }
 
@@ -39,5 +44,10 @@ public class Meals {
 
     public void setCalories(int calories) {
         this.calories = calories;
+    }
+
+    @Override
+    public boolean isNew() {
+        return false;
     }
 }

@@ -12,7 +12,7 @@
     <h2><a href="meals.jsp">Home</a></h2>
 
     <div class="form-group">
-        <a href="mealForm.jsp">Add Meal</a>
+        <a href="updatemealForm.jsp">Add Meal</a>
 
         <table class="table">
             <thead class="thead-light">
