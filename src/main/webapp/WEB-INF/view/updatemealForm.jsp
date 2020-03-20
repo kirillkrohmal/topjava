@@ -40,8 +40,8 @@
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-default" name="saveMeals">Save</button>
-                <button type="button" class="btn btn-default" name="cancelMeals">Cancel</button>
+                <button type="submit" class="btn btn-default" name="saveMeals">Save</button>
+                <button type="button" class="btn btn-default" name="cancelMeals" href="${pageContext.request.contextPath}/list">Cancel</button>
 
             </div>
 
