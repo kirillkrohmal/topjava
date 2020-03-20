@@ -24,13 +24,21 @@
                 <th>Delete your items</th>
             </tr>
 
-            <c:forEach var="meals" items="${mealsItem}">
+            <c:forEach var="meal" items="${meals}">
+                <c:url var="updateLink" value="/updateForm">
+                    <c:param name="mealId" value="${meal.id}"/>
+                </c:url>
+
+                <c:url var="deleteLink" value="/delete">
+                    <c:param name="mealId" value="${meal.id}"/>
+                </c:url>
+
                 <tr>
-                    <td>${meals.date}</td>
-                    <td>${meals.description}</td>
-                    <td>${meals.calories}</td>
-                    <td>${meals.calories}</td>
-                    <td>${meals.calories}</td>
+                    <td>${meal.date}</td>
+                    <td>${meal.description}</td>
+                    <td>${meal.calories}</td>
+                    <td><p><a href="${updateLink}">Update</a></p></td>
+                    <td><p><a href="${deleteLink}">Delete</a></p></td>
                 </tr>
             </c:forEach>
             </thead>

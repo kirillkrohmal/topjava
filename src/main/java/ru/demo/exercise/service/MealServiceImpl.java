@@ -18,13 +18,18 @@ public class MealServiceImpl implements MealService {
     }
 
     @Override
-    public List<Meal> get() {
+    public Meal get(int id) {
+        return jpaMealRepository.get(id);
+    }
+
+    @Override
+    public List<Meal> getAll() {
         return jpaMealRepository.getAll();
     }
 
     @Override
-    public void delete(Meal meal) {
-        jpaMealRepository.delete(meal);
+    public void delete(int id) {
+        jpaMealRepository.delete(id);
     }
 
     @Override

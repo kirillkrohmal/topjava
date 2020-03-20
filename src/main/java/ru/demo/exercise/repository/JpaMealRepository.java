@@ -20,12 +20,16 @@ public class JpaMealRepository {
         return mealRepositoryJpa.save(meal);
     };
 
+    public Meal get(int id) {
+        return mealRepositoryJpa.getById(id);
+    };
+
     public List<Meal> getAll() {
         return mealRepositoryJpa.findAll();
     };
 
-    public void delete(Meal meal) {
-        mealRepositoryJpa.delete(meal);
+    public void delete(int id) {
+        mealRepositoryJpa.deleteById(id);
     };
 
 }

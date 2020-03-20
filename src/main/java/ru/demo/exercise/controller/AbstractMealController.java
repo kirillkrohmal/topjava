@@ -21,9 +21,9 @@ public abstract class AbstractMealController {
         return mealService.save(meal);
     }
 
-    public void delete(Meal meal) {
+    public void delete(int id) {
         LOG.info("return delete method");
-        mealService.delete(meal);
+        mealService.delete(id);
     }
 
     public void update(int id, Meal meal) {

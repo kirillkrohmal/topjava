@@ -10,9 +10,11 @@ import java.util.List;
 public interface MealService {
     Meal save(Meal meal);
 
-    List<Meal> get();
+    Meal get(int id);
 
-    void delete(Meal meal);
+    List<Meal> getAll();
+
+    void delete(int id);
 
     void update(int id, Meal meal);
 

@@ -11,7 +11,7 @@
 
 <div class="container">
     <h2><a href="meals.jsp">Home</a></h2>
-    <h2>Редактировать еду</h2>
+    <h2 align="center">Редактировать еду</h2>
     <div id="row">
         <div class="col-md-9">
 
@@ -36,12 +36,11 @@
                 </div>
             </div>
 
+            <button type="button" class="btn btn-default" name="saveMeals">Save</button>
+            <button type="button" class="btn btn-default" name="cancelMeals">Cancel</button>
+
         </div>
     </div>
-
-
-    <button type="button" class="btn btn-default" name="saveMeals">Save</button>
-    <button type="button" class="btn btn-default" name="cancelMeals">Cancel</button>
 
 </div>
 

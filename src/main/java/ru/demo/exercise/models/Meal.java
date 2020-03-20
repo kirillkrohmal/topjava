@@ -1,25 +1,46 @@
 package ru.demo.exercise.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import java.time.LocalDateTime;
 
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import java.time.LocalDateTime;
+import javax.persistence.*;
 
 
 @Entity
-public class Meal extends AbstractBaseEntity {
+@Table(name="meals")
+public class Meal {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name = "date_time")
     private LocalDateTime dateTime;
+
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "calories")
     private int calories;
 
     public Meal() {
     }
 
-    public Meal(Integer id, LocalDateTime dateTime, String description, int calories) {
-        super(id);
+    public Meal(int id, LocalDateTime dateTime, String description, int calories) {
+        this.id = id;
         this.dateTime = dateTime;
         this.description = description;
         this.calories = calories;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public LocalDateTime getDateTime() {
@@ -46,8 +67,5 @@ public class Meal extends AbstractBaseEntity {
         this.calories = calories;
     }
 
-    @Override
-    public boolean isNew() {
-        return false;
-    }
+
 }
