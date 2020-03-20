@@ -9,8 +9,12 @@ import java.util.List;
 @Repository
 public class JpaMealRepository {
 
-    @Autowired
     private MealRepositoryJpa mealRepositoryJpa;
+
+    @Autowired
+    public void setMealRepositoryJpa(MealRepositoryJpa mealRepositoryJpa) {
+        this.mealRepositoryJpa = mealRepositoryJpa;
+    }
 
     public Meal save(Meal meal) {
         return mealRepositoryJpa.save(meal);
@@ -21,7 +25,7 @@ public class JpaMealRepository {
     };
 
     public Meal get(int id) {
-        return mealRepositoryJpa.getById(id);
+        return mealRepositoryJpa.getOne(id);
     };
 
     public List<Meal> getAll() {

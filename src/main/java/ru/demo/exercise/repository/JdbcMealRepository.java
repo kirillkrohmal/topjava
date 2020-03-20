@@ -1,4 +1,4 @@
 package ru.demo.exercise.repository;
 
-public class JdbcUserRepository {
+public class JdbcMealRepository {
 }

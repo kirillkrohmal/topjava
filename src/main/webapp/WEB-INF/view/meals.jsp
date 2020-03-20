@@ -3,16 +3,16 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-    <title>Счетчик калорий</title>]
+    <title>Счетчик калорий</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
 
 <div class="container">
-    <h2><a href="meals.jsp">Home</a></h2>
+    <h2><a href="${pageContext.request.contextPath}/list">Home</a></h2>
 
     <div class="form-group">
-        <a href="updatemealForm.jsp">Add Meal</a>
+        <a href="${pageContext.request.contextPath}/createForm">Add Meal</a>
 
         <table class="table">
             <thead class="thead-light">

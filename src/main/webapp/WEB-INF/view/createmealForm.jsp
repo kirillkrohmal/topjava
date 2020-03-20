@@ -11,7 +11,7 @@
 <body>
 
 <div class="container">
-    <h2><a href="meals.jsp">Home</a></h2>
+    <h2><a href="${pageContext.request.contextPath}/list">Home</a></h2>
     <h2 align="center">Добавить еду</h2>
     <div id="row">
         <%--@elvariable id="mealsCreate" type=""--%>
