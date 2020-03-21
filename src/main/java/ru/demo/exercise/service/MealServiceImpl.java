@@ -33,7 +33,7 @@ public class MealServiceImpl implements MealService {
     }
 
     @Override
-    public void update(int id, Meal meal) {
-        jpaMealRepository.update(id, meal);
+    public void update(Meal meal) {
+        jpaMealRepository.update(meal);
     }
 }

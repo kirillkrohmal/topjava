@@ -10,8 +10,7 @@ import ru.demo.exercise.service.MealService;
 
 
 @Controller
-public class JspMealController extends AbstractMealController {
-
+public class JspMealController {
     @Autowired
     MealService mealService;
 
@@ -31,26 +30,29 @@ public class JspMealController extends AbstractMealController {
     }
 
     @PostMapping(value = "/create")
-    public String save(@ModelAttribute Meal meal) {
-        meal.setId(0);
-
-        super.add(meal);
+    public String save(@ModelAttribute("mealsCreate") Meal meal) {
+        mealService.save(meal);
         return "redirect:/list";
     }
 
-    @DeleteMapping(value = "/delete")
+    @GetMapping(value = "/delete")
     public String deleteMeal(@RequestParam("mealId") int id) {
-        super.delete(id);
+        mealService.delete(id);
         return "redirect:/list";
     }
 
-    @PutMapping(value = "/updateForm")
+    @GetMapping(value = "/updateForm")
     public String updateForm(@RequestParam("mealId") int id, Model model) {
         Meal meal = mealService.get(id);
-        model.addAttribute("mealsCreate", meal);
+        model.addAttribute("mealsUpdate", meal);
 
-        super.update(id, meal);
         return "updatemealForm";
     }
 
+    @PostMapping(value = "/update")
+    public String update(@ModelAttribute("mealsUpdate") Meal meal) {
+        mealService.update(meal);
+
+        return "redirect:/list";
+    }
 }

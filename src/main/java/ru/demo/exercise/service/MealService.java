@@ -16,6 +16,6 @@ public interface MealService {
 
     void delete(int id);
 
-    void update(int id, Meal meal);
+    void update(Meal meal);
 
 }

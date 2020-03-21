@@ -20,7 +20,7 @@ public class JpaMealRepository {
         return mealRepositoryJpa.save(meal);
     };
 
-    public Meal update(int id, Meal meal) {
+    public Meal update(Meal meal) {
         return mealRepositoryJpa.save(meal);
     };
 

@@ -13,7 +13,8 @@ import javax.persistence.*;
 @Table(name="meals")
 public class Meal {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private int id;
 
     @Column(name = "date_time")
@@ -28,11 +29,8 @@ public class Meal {
     public Meal() {
     }
 
-    public Meal(int id, LocalDateTime dateTime, String description, int calories) {
+    public Meal(int id) {
         this.id = id;
-        this.dateTime = dateTime;
-        this.description = description;
-        this.calories = calories;
     }
 
     public void setId(int id) {

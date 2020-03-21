@@ -17,6 +17,7 @@
         <table class="table">
             <thead class="thead-light">
             <tr>
+                <th>ID</th>
                 <th>Date</th>
                 <th>Description</th>
                 <th>Calories</th>
@@ -34,7 +35,8 @@
                 </c:url>
 
                 <tr>
-                    <td>${meal.date}</td>
+                    <td>${meal.id}</td>
+                    <td>${meal.dateTime}</td>
                     <td>${meal.description}</td>
                     <td>${meal.calories}</td>
                     <td><p><a href="${updateLink}">Update</a></p></td>

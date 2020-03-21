@@ -25,8 +25,8 @@ public abstract class AbstractMealController {
         mealService.delete(id);
     }
 
-    public void update(int id, Meal meal) {
+    public void update(Meal meal) {
         LOG.info("return update method");
-        mealService.update(id, meal);
+        mealService.update(meal);
     }
 }
