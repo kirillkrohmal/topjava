@@ -17,7 +17,7 @@ public class Meal {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "date_time")
+    @Column(name = "date_time", columnDefinition = "timestamp default new()")
     private LocalDateTime dateTime;
 
     @Column(name = "description")

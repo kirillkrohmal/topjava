@@ -19,7 +19,8 @@
             base-package="
                   ru.demo.exercise.controller
                   ru.demo.exercise.service
-                  ru.demo.exercise.repository">
+                  ru.demo.exercise.repository
+                  ru.demo.exercise.jpa">
     </context:component-scan>
 
     <import resource="spring-db.xml"/>

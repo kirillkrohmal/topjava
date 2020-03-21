@@ -3,14 +3,14 @@ package ru.demo.exercise.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.demo.exercise.models.Meal;
-import ru.demo.exercise.repository.JpaMealRepository;
+import ru.demo.exercise.jpa.JpaMealRepositoryImpl;
 
 import java.util.List;
 
 @Service
 public class MealServiceImpl implements MealService {
     @Autowired
-    JpaMealRepository jpaMealRepository;
+    JpaMealRepositoryImpl jpaMealRepository;
 
     @Override
     public Meal save(Meal meal) {

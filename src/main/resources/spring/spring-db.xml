@@ -47,7 +47,9 @@
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
-    <jpa:repositories base-package="ru.demo.exercise.repository" entity-manager-factory-ref="entityManagerFactory"/>
+
+    <jpa:repositories base-package="ru.demo.exercise.jpa" entity-manager-factory-ref="entityManagerFactory"/>
+
 
     <tx:annotation-driven/>
 
