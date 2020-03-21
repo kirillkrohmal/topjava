@@ -1,22 +1,17 @@
-package ru.demo.exercise.jpa;
+package ru.demo.exercise.repository.datajpa;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import ru.demo.exercise.jpa.ProxyRepository;
 import ru.demo.exercise.models.Meal;
 import ru.demo.exercise.repository.MealRepository;
 
 import java.util.List;
 
 @Repository
-public class JpaMealRepositoryImpl implements MealRepository {
-
-    private ProxyRepository proxyRepository;
+public class DataJpaMealRepository implements MealRepository {
 
     @Autowired
-    public void setMealRepositoryJpa(ProxyRepository mealRepositoryJpa) {
-        this.proxyRepository = mealRepositoryJpa;
-    }
+    private ProxyRepository proxyRepository;
 
     public Meal save(Meal meal) {
         return proxyRepository.save(meal);
@@ -37,5 +32,4 @@ public class JpaMealRepositoryImpl implements MealRepository {
     public void delete(int id) {
         proxyRepository.deleteById(id);
     };
-
 }

@@ -9,7 +9,7 @@ import ru.demo.exercise.models.Meal;
 import ru.demo.exercise.service.MealService;
 
 @Controller
-public abstract class AbstractMealController {
+public abstract class AbstractController {
     private final Logger LOG = LoggerFactory.getLogger(getClass());
 
     @Autowired

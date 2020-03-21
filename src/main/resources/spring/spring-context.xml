@@ -9,7 +9,6 @@
          http://www.springframework.org/schema/context
          https://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
-
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/view/"/>
         <property name="suffix" value=".jsp"/>
@@ -19,11 +18,9 @@
             base-package="
                   ru.demo.exercise.controller
                   ru.demo.exercise.service
-                  ru.demo.exercise.repository
-                  ru.demo.exercise.jpa">
+                  ru.demo.exercise.repository">
     </context:component-scan>
 
     <import resource="spring-db.xml"/>
 
-    
 </beans>

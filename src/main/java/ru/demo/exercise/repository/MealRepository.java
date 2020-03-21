@@ -14,5 +14,4 @@ public interface MealRepository {
     List<Meal> getAll();
 
     void delete(int id);
-
 }

@@ -3,37 +3,38 @@ package ru.demo.exercise.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.demo.exercise.models.Meal;
-import ru.demo.exercise.jpa.JpaMealRepositoryImpl;
+import ru.demo.exercise.repository.jdbc.JdbcMealRepository;
 
 import java.util.List;
 
 @Service
-public class MealServiceImpl implements MealService {
+public class JdbcMealServiceImpl implements MealService {
+
     @Autowired
-    JpaMealRepositoryImpl jpaMealRepository;
+    JdbcMealRepository jdbcMealRepository;
 
     @Override
     public Meal save(Meal meal) {
-        return jpaMealRepository.save(meal);
+        return null;
     }
 
     @Override
     public Meal get(int id) {
-        return jpaMealRepository.get(id);
+        return null;
     }
 
     @Override
     public List<Meal> getAll() {
-        return jpaMealRepository.getAll();
+        return null;
     }
 
     @Override
     public void delete(int id) {
-        jpaMealRepository.delete(id);
+
     }
 
     @Override
     public void update(Meal meal) {
-        jpaMealRepository.update(meal);
+
     }
 }
