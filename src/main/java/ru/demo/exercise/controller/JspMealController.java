@@ -6,18 +6,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.demo.exercise.models.Meal;
+import ru.demo.exercise.service.DataJpaMealServiceImpl;
 import ru.demo.exercise.service.MealService;
 
 
 @Controller
 public class JspMealController {
     @Autowired
-    MealService mealService;
+    DataJpaMealServiceImpl mealService;
 
     @GetMapping(value = "/list")
     public String getAll(Model model) {
         model.addAttribute("meals", mealService.getAll());
-
         return "meals";
     }
 
@@ -52,7 +52,6 @@ public class JspMealController {
     @PostMapping(value = "/update")
     public String update(@ModelAttribute("mealsUpdate") Meal meal) {
         mealService.update(meal);
-
         return "redirect:/list";
     }
 }

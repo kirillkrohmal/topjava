@@ -7,10 +7,8 @@ import ru.demo.exercise.models.Meal;
 
 import java.util.List;
 
-@Repository
-public class JdbcMealRepository implements MealRepository {
 
-    JdbcTemplate jdbcTemplate;
+public class JdbcMealRepository implements MealRepository {
 
     @Override
     public Meal save(Meal meal) {

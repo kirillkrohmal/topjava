@@ -7,10 +7,9 @@ import ru.demo.exercise.repository.jdbc.JdbcMealRepository;
 
 import java.util.List;
 
-@Service
+
 public class JdbcMealServiceImpl implements MealService {
 
-    @Autowired
     JdbcMealRepository jdbcMealRepository;
 
     @Override

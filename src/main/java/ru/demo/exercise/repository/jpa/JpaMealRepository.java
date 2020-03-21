@@ -9,11 +9,9 @@ import javax.persistence.EntityManager;
 import java.util.List;
 
 
-@Repository
+
 public class JpaMealRepository implements MealRepository {
 
-    @Autowired
-    EntityManager entityManager;
 
     @Override
     public Meal save(Meal meal) {

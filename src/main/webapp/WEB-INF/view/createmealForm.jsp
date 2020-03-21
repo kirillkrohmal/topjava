@@ -23,8 +23,8 @@
 
                 <div class="form-group">
                     <div class="col-md-12">
-                        <label for="datetime" type="table" class="table">DateTime</label>
-                        <input id="datetime" type="datetime-local" name="datetime"/>
+                        <label for="dateTime">DateTime</label>
+                        <input id="dateTime" type="date" name="datetime"/>
                     </div>
                 </div>
 

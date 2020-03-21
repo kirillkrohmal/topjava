@@ -5,6 +5,7 @@ package ru.demo.exercise.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import javax.persistence.*;
 
@@ -17,8 +18,8 @@ public class Meal {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "date_time", columnDefinition = "timestamp default new()")
-    private LocalDateTime dateTime;
+    @Column(name = "date_time")
+    private LocalDate datetime;
 
     @Column(name = "description")
     private String description;
@@ -41,12 +42,12 @@ public class Meal {
         return id;
     }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
+    public LocalDate getDatetime() {
+        return datetime;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
+    public void setDatetime(LocalDate datetime) {
+        this.datetime = datetime;
     }
 
     public String getDescription() {
