@@ -6,3 +6,14 @@ CREATE TABLE meals
   calories integer NOT NULL,
   CONSTRAINT meals_pkey PRIMARY KEY (id)
 );
+
+
+
+CREATE TABLE meals
+(
+  id integer NOT NULL,
+  date_time date,
+  description text NOT NULL,
+  calories integer NOT NULL,
+  CONSTRAINT meals_pkey PRIMARY KEY (id)
+)

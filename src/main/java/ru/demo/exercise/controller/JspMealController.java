@@ -7,13 +7,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.demo.exercise.models.Meal;
 import ru.demo.exercise.service.DataJpaMealServiceImpl;
+import ru.demo.exercise.service.JdbcMealServiceImpl;
 import ru.demo.exercise.service.MealService;
 
 
 @Controller
 public class JspMealController {
     @Autowired
-    DataJpaMealServiceImpl mealService;
+    JdbcMealServiceImpl mealService;
 
     @GetMapping(value = "/list")
     public String getAll(Model model) {

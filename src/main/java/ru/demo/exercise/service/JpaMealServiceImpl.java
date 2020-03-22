@@ -10,7 +10,6 @@ import java.util.List;
 
 public class JpaMealServiceImpl implements MealService {
 
-    @Autowired
     JpaMealRepository jpaMealRepository;
 
     @Override

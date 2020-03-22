@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 import javax.persistence.*;
 
 
@@ -19,7 +20,7 @@ public class Meal {
     private int id;
 
     @Column(name = "date_time")
-    private LocalDate datetime;
+    private Date datetime;
 
     @Column(name = "description")
     private String description;
@@ -42,11 +43,11 @@ public class Meal {
         return id;
     }
 
-    public LocalDate getDatetime() {
+    public Date getDatetime() {
         return datetime;
     }
 
-    public void setDatetime(LocalDate datetime) {
+    public void setDatetime(Date datetime) {
         this.datetime = datetime;
     }
 
@@ -65,4 +66,6 @@ public class Meal {
     public void setCalories(int calories) {
         this.calories = calories;
     }
+
+
 }
