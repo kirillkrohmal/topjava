@@ -17,10 +17,10 @@ public class Meal {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private int id;
+    private Integer id;
 
     @Column(name = "date_time")
-    private Date datetime;
+    private LocalDateTime datetime;
 
     @Column(name = "description")
     private String description;
@@ -43,11 +43,11 @@ public class Meal {
         return id;
     }
 
-    public Date getDatetime() {
+    public LocalDateTime getDatetime() {
         return datetime;
     }
 
-    public void setDatetime(Date datetime) {
+    public void setDatetime(LocalDateTime datetime) {
         this.datetime = datetime;
     }
 
@@ -67,5 +67,7 @@ public class Meal {
         this.calories = calories;
     }
 
-
+    public boolean isNew() {
+        return this.id == null;
+    }
 }

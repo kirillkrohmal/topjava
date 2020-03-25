@@ -20,13 +20,13 @@
                    modelAttribute="mealsCreate" method="post">
             <div class="col-md-9">
                 <input type="hidden"/>
-
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <label for="dateTime">DateTime</label>
-                        <input id="dateTime" type="date" name="datetime"/>
-                    </div>
-                </div>
+                    <%--
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label for="dateTime">DateTime</label>
+                                            <input id="dateTime" type="date-local" name="datetime"/>
+                                        </div>
+                                    </div>--%>
 
                 <div class="form-group">
                     <div class="col-md-12">
@@ -43,7 +43,9 @@
                 </div>
 
                 <button type="submit" class="btn btn-default" name="saveMeals">Save</button>
-                <button type="button" class="btn btn-default" name="cancelMeals" onclick="window.history.back()">Cancel</button>
+                <button type="button" class="btn btn-default" name="cancelMeals" onclick="window.history.back()">
+                    Cancel
+                </button>
 
             </div>
         </form:form>

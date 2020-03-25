@@ -10,11 +10,22 @@ import ru.demo.exercise.service.DataJpaMealServiceImpl;
 import ru.demo.exercise.service.JdbcMealServiceImpl;
 import ru.demo.exercise.service.MealService;
 
+import javax.persistence.Column;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Date;
+
 
 @Controller
 public class JspMealController {
     @Autowired
-    JdbcMealServiceImpl mealService;
+    DataJpaMealServiceImpl mealService;
+
+    private LocalDateTime datetime;
+
+    String dateString = String.valueOf(datetime);
+
 
     @GetMapping(value = "/list")
     public String getAll(Model model) {
@@ -31,7 +42,12 @@ public class JspMealController {
     }
 
     @PostMapping(value = "/create")
-    public String save(@ModelAttribute("mealsCreate") Meal meal) {
+    public String save(@ModelAttribute("mealsCreate") Meal meal) throws ParseException {
+
+
+        Date parsed = new SimpleDateFormat("dd-MMM-yyyy").parse(dateString);
+
+
         mealService.save(meal);
         return "redirect:/list";
     }

@@ -21,6 +21,4 @@
                   ru.demo.exercise.repository">
     </context:component-scan>
 
-    <import resource="spring-db.xml"/>
-
 </beans>

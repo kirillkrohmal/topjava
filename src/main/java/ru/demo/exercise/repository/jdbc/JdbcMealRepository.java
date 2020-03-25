@@ -14,7 +14,7 @@ import java.util.List;
 
 
 @Repository
-public abstract class JdbcMealRepository implements MealRepository {
+public class JdbcMealRepository implements MealRepository {
 
     private static final BeanPropertyRowMapper<Meal> ROW_MAPPER = BeanPropertyRowMapper.newInstance(Meal.class);
 
@@ -40,11 +40,12 @@ public abstract class JdbcMealRepository implements MealRepository {
     public Meal save(Meal meal) {
         MapSqlParameterSource map = new MapSqlParameterSource()
                 .addValue("id", meal.getId())
-                .addValue("date_time", meal.getDatetime())
-                .addValue("description", meal.getDatetime())
+                /*.addValue("date_time", meal.getDatetime())*/
+                .addValue("description", meal.getDescription())
                 .addValue("calories", meal.getCalories());
 
-        namedParameterJdbcTemplate.update("INSERT INTO meals(id, date_time, description, calories) " +
+        namedParameterJdbcTemplate
+                .update("INSERT INTO meals(id, date_time, description, calories) " +
                 "VALUES(id=:id, date_time=:date_time, description=:description, calories=:calories)", map);
 
         return meal;
@@ -54,12 +55,12 @@ public abstract class JdbcMealRepository implements MealRepository {
     public Meal update(Meal meal) {
         MapSqlParameterSource map = new MapSqlParameterSource()
                 .addValue("id", meal.getId())
-                .addValue("date_time", meal.getDatetime())
-                .addValue("description", meal.getDatetime())
+                /*.addValue("date_time", meal.getDatetime())*/
+                .addValue("description", meal.getDescription())
                 .addValue("calories", meal.getCalories());
 
-        namedParameterJdbcTemplate.update("" +
-                "UPDATE meals " + " SET date_time=:date_time, description=:description, calories=:calories" +
+        namedParameterJdbcTemplate
+                .update("" + "UPDATE meals " + " SET date_time=:date_time, description=:description, calories=:calories" +
                 " WHERE id=:id", map);
 
         return meal;
@@ -67,19 +68,20 @@ public abstract class JdbcMealRepository implements MealRepository {
 
     @Override
     public Meal get(int id) {
-        return jdbcTemplate.
-                queryForObject("SELECT id, date_time, description, calories FROM meals WHERE id=?",
+        return jdbcTemplate
+                .queryForObject("SELECT id, date_time, description, calories FROM meals WHERE id=?",
                         ROW_MAPPER, id);
     }
 
     @Override
     public List<Meal> getAll() {
-        return jdbcTemplate.
-                query("SELECT id, date_time, description, calories FROM meals", ROW_MAPPER);
+        return jdbcTemplate
+                .query("SELECT id, date_time, description, calories FROM meals", ROW_MAPPER);
     }
 
     @Override
     public void delete(int id) {
-        jdbcTemplate.update("DELETE FROM meals WHERE id=?", id);
+        jdbcTemplate
+                .update("DELETE FROM meals WHERE id=?", id);
     }
 }
