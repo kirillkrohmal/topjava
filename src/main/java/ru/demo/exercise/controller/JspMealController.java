@@ -6,11 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.demo.exercise.models.Meal;
-import ru.demo.exercise.service.DataJpaMealServiceImpl;
-import ru.demo.exercise.service.JdbcMealServiceImpl;
-import ru.demo.exercise.service.MealService;
+import ru.demo.exercise.service.datajpa.DataJpaMealServiceImpl;
 
-import javax.persistence.Column;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;

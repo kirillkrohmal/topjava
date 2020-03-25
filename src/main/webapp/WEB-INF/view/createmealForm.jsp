@@ -20,13 +20,13 @@
                    modelAttribute="mealsCreate" method="post">
             <div class="col-md-9">
                 <input type="hidden"/>
-                    <%--
-                                    <div class="form-group">
-                                        <div class="col-md-12">
-                                            <label for="dateTime">DateTime</label>
-                                            <input id="dateTime" type="date-local" name="datetime"/>
-                                        </div>
-                                    </div>--%>
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="dateTime">DateTime</label>
+                        <input id="dateTime" type="datetime-local" name="datetime"/>
+                    </div>
+                </div>
 
                 <div class="form-group">
                     <div class="col-md-12">
