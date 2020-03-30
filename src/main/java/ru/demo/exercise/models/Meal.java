@@ -2,9 +2,12 @@ package ru.demo.exercise.models;
 
 
 
+import ru.demo.exercise.mealconverter.MealConverter;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -19,8 +22,9 @@ public class Meal {
     @Column(name = "id")
     private Integer id;
 
+    @Convert(converter = MealConverter.class)
     @Column(name = "date_time")
-    private LocalDateTime datetime;
+    LocalDateTime datetime;
 
     @Column(name = "description")
     private String description;
@@ -33,6 +37,14 @@ public class Meal {
 
     public Meal(int id) {
         this.id = id;
+    }
+
+
+    public Meal(int id, LocalDateTime datetime, String description, int calories) {
+        this.id = id;
+        this.datetime = datetime;
+        this.description = description;
+        this.calories = calories;
     }
 
     public void setId(int id) {

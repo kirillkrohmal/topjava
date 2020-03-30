@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.demo.exercise.models.Meal;
+import ru.demo.exercise.repository.datajpa.DataJpaMealRepository;
 import ru.demo.exercise.service.datajpa.DataJpaMealServiceImpl;
 
 import java.text.ParseException;
@@ -17,12 +18,7 @@ import java.util.Date;
 @Controller
 public class JspMealController {
     @Autowired
-    DataJpaMealServiceImpl mealService;
-
-    private LocalDateTime datetime;
-
-    String dateString = String.valueOf(datetime);
-
+    DataJpaMealRepository mealService;
 
     @GetMapping(value = "/list")
     public String getAll(Model model) {
@@ -40,11 +36,6 @@ public class JspMealController {
 
     @PostMapping(value = "/create")
     public String save(@ModelAttribute("mealsCreate") Meal meal) throws ParseException {
-
-
-        Date parsed = new SimpleDateFormat("dd-MMM-yyyy").parse(dateString);
-
-
         mealService.save(meal);
         return "redirect:/list";
     }
