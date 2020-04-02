@@ -26,11 +26,11 @@ public class MealConverter implements AttributeConverter<Meal, String > {
 
     @Override
     public Meal convertToEntityAttribute(String dbData) {
-        String[] rgb = dbData.split(SEPARATOR);
+        String[] fields = dbData.split(SEPARATOR);
         Meal meal = new Meal();
-        meal.setDatetime(LocalDateTime.parse(rgb[0]));
-        meal.setDescription(rgb[0]);
-        meal.setCalories(Integer.parseInt(rgb[2]));
+        meal.setCalories(Integer.parseInt(fields[0]));
+        meal.setDatetime(LocalDateTime.parse(fields[1]));
+        meal.setDescription(fields[2]);
 
         return meal;
     }

@@ -24,7 +24,7 @@ public class Meal {
 
     @Convert(converter = MealConverter.class)
     @Column(name = "date_time")
-    LocalDateTime datetime;
+    private LocalDateTime datetime;
 
     @Column(name = "description")
     private String description;
@@ -38,7 +38,6 @@ public class Meal {
     public Meal(int id) {
         this.id = id;
     }
-
 
     public Meal(int id, LocalDateTime datetime, String description, int calories) {
         this.id = id;
