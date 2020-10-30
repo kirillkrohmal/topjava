@@ -18,7 +18,7 @@ public class MealConverter implements AttributeConverter<Meal, String > {
         StringBuilder sb = new StringBuilder();
         sb.append(meal.getCalories())
                 .append(SEPARATOR)
-                .append(meal.getDatetime())
+                .append(SEPARATOR)
                 .append(SEPARATOR)
                 .append(meal.getDescription());
         return sb.toString();
@@ -29,7 +29,6 @@ public class MealConverter implements AttributeConverter<Meal, String > {
         String[] fields = dbData.split(SEPARATOR);
         Meal meal = new Meal();
         meal.setCalories(Integer.parseInt(fields[0]));
-        meal.setDatetime(LocalDateTime.parse(fields[1]));
         meal.setDescription(fields[2]);
 
         return meal;

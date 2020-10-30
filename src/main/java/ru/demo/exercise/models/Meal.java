@@ -22,10 +22,6 @@ public class Meal {
     @Column(name = "id")
     private Integer id;
 
-    @Convert(converter = MealConverter.class)
-    @Column(name = "date_time")
-    private LocalDateTime datetime;
-
     @Column(name = "description")
     private String description;
 
@@ -35,13 +31,7 @@ public class Meal {
     public Meal() {
     }
 
-    public Meal(int id) {
-        this.id = id;
-    }
-
-    public Meal(int id, LocalDateTime datetime, String description, int calories) {
-        this.id = id;
-        this.datetime = datetime;
+    public Meal(String description, int calories) {
         this.description = description;
         this.calories = calories;
     }
@@ -52,14 +42,6 @@ public class Meal {
 
     public int getId() {
         return id;
-    }
-
-    public LocalDateTime getDatetime() {
-        return datetime;
-    }
-
-    public void setDatetime(LocalDateTime datetime) {
-        this.datetime = datetime;
     }
 
     public String getDescription() {
@@ -76,9 +58,5 @@ public class Meal {
 
     public void setCalories(int calories) {
         this.calories = calories;
-    }
-
-    public boolean isNew() {
-        return this.id == null;
     }
 }

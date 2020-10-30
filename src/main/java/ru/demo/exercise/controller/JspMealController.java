@@ -2,11 +2,13 @@ package ru.demo.exercise.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.demo.exercise.models.Meal;
 import ru.demo.exercise.repository.datajpa.DataJpaMealRepository;
+import ru.demo.exercise.service.MealService;
 import ru.demo.exercise.service.datajpa.DataJpaMealServiceImpl;
 
 import java.text.ParseException;
@@ -17,8 +19,10 @@ import java.util.Date;
 
 @Controller
 public class JspMealController {
+
     @Autowired
-    DataJpaMealRepository mealService;
+    @Qualifier("dataJpaMealServiceImpl")
+    MealService mealService;
 
     @GetMapping(value = "/list")
     public String getAll(Model model) {

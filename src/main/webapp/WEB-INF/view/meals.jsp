@@ -18,7 +18,6 @@
             <thead class="thead-light">
             <tr>
                 <th>ID</th>
-                <th>Date</th>
                 <th>Description</th>
                 <th>Calories</th>
                 <th>Update your items</th>
@@ -36,7 +35,6 @@
 
                 <tr>
                     <td>${meal.id}</td>
-                    <td><fmt:formatDate value="${meal.datetime}" pattern="dd-MMMM-yy"/></td>
                     <td>${meal.description}</td>
                     <td>${meal.calories}</td>
                     <td><p><a href="${updateLink}">Update</a></p></td>

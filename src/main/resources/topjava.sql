@@ -7,8 +7,6 @@ CREATE TABLE meals
   CONSTRAINT meals_pkey PRIMARY KEY (id)
 );
 
-
-
 CREATE TABLE meals
 (
   id integer NOT NULL,

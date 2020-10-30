@@ -43,9 +43,8 @@
                 </div>
 
                 <button type="submit" class="btn btn-default" name="saveMeals">Save</button>
-                <button type="button" class="btn btn-default" name="cancelMeals" onclick="window.history.back()">
-                    Cancel
-                </button>
+                <button type="button" class="btn btn-default" name="cancelMeals"
+                        onclick="window.history.back()">Cancel</button>
 
             </div>
         </form:form>

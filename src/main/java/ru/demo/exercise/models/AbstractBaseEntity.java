@@ -5,7 +5,6 @@ import org.springframework.data.domain.Persistable;
 import java.util.Objects;
 
 public abstract class AbstractBaseEntity implements Persistable<Integer> {
-
     private Integer id;
 
     AbstractBaseEntity() {
@@ -23,7 +22,6 @@ public abstract class AbstractBaseEntity implements Persistable<Integer> {
     public void setId(Integer id) {
         this.id = id;
     }
-
 
     public boolean isNew(int id) {
         return this.id == null;
