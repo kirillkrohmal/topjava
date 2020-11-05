@@ -16,7 +16,16 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="meals")
+@NamedQueries({
+        @NamedQuery(name = Meal.ALL_SORTED, query = "SELECT m FROM Meal m WHERE m.user.id=:userId ORDER BY m.dateTime DESC"),
+        @NamedQuery(name = Meal.DELETE, query = "DELETE FROM Meal m WHERE m.id=:id AND m.user.id=:userId"),
+})
 public class Meal {
+    public static final String ALL_SORTED = "Meal.getAll";
+    public static final String DELETE = "Meal.delete";
+    public static final String GET_BETWEEN = "Meal.getBetween";
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -27,6 +36,13 @@ public class Meal {
 
     @Column(name = "calories")
     private int calories;
+
+    @Column(name = "date_time", nullable = false)
+    private LocalDateTime dateTime;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     public Meal() {
     }
